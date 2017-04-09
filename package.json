@@ -7,6 +7,8 @@
     "url": "https://github.com/joehand/bagit-fs/issues"
   },
   "devDependencies": {
+    "hyperdrive": "^8.1.0",
+    "random-access-memory": "^2.3.0",
     "standard": "*",
     "tap-spec": "^4.0.2",
     "tape": "^4.0.0"
