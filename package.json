@@ -1,0 +1,32 @@
+{
+  "name": "bagit-fs",
+  "description": "node fs implementation for bagit format",
+  "version": "1.0.0",
+  "author": "Joe Hand <joe@hand.email>",
+  "bugs": {
+    "url": "https://github.com/joehand/bagit-fs/issues"
+  },
+  "devDependencies": {
+    "standard": "*",
+    "tap-spec": "^4.0.2",
+    "tape": "^4.0.0"
+  },
+  "homepage": "https://github.com/joehand/bagit-fs",
+  "keywords": [],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joehand/bagit-fs.git"
+  },
+  "scripts": {
+    "test": "standard && tape test/*.js | tap-spec"
+  },
+  "dependencies": {
+    "count-files": "^2.6.0",
+    "minimist": "^1.2.0",
+    "mirror-folder": "^1.2.2",
+    "mkdirp": "^0.5.1",
+    "prettier-bytes": "^1.0.3"
+  }
+}
