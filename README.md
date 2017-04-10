@@ -42,13 +42,27 @@ See `example/index.js` for an example usage with [mirror-folder](https://github.
 
 Finalize the bag, writing `bag-info.txt` and `bagit.txt`. Date and size are automatically written to the info. This should only be called when the bag is complete.
 
+### Using Finalized Bags
+
+#### `bag.readFile(name, [opts], cb)`
+
+Read a file from a completed bag. File is verified with checksum in manifest unless `opts.verify === false`.
+
+#### `bag.readManifest(callback(err, entries))`
+
+Get all entries in the manifest.
+
+#### `bag.getManifestEntry(name, callback(err, entry))`
+
+Get specific entry `{checksum: <hash>, name: data/file.txt}` in the manifest.
+
 ### `fs` API
 
 Several of the node `fs` functions are implemented allowing you to create or read from bags like the fs. Most of these just wrap the `fs` calls to act on the bag's `data` folder.
 
 * `bag.createWriteStream(name, opts, cb)` - writes file to `bagDir/data` and the checksum hash to the manifest.
 * `bag.mkdir(name, opts, cb)` - make a dir in the `data/` folder.
-* `bag.createReadStream(name, opts, cb)`
+* `bag.createReadStream(name, opts, cb)` - file is not verified with manifest (yet).
 * `bag.mkdir(name, cb)`
 * `bag.stat(name, cb)`
 * `bag.lstat(name, cb)`
