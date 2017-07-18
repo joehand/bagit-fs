@@ -151,7 +151,7 @@ BagIt.prototype.createWriteStream = function (name, opts) {
     function (cb) {
       hash = digest.digest('hex')
       // TODO: check if old file hash is in manifest
-      var data = `${hash} ${path.relative(self.dir, name)}\n`
+      var data = `${hash} ${path.relative(self.dir, name).split(path.sep).join('/')}\n`
       fs.appendFile(self.manifest, data, cb)
     }
   )
